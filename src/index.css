@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #0a0b10;
+  --color-surface: #12141c;
+  --color-surface-hover: #1b1e2a;
+  --color-accent: #ff5533;
+  --color-accent-secondary: #00e5ff;
+  --color-accent-lime: #ccff00;
+  --color-text-main: #f4f5f8;
+  --color-text-muted: #8b92a5;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: initial; /* Handled by Lenis for smooth scroll */
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0b10;
+}
+::-webkit-scrollbar-thumb {
+  background: #252936;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Custom Cursor */
+.custom-cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #ff5533;
+  border-radius: 50%;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.15s ease-out;
+}
+
+.custom-cursor-follower {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(255, 85, 51, 0.5);
+  border-radius: 50%;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              transform 0.1s ease-out;
+}
+
+.custom-cursor-follower.cursor-hover {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 85, 51, 0.15);
+  border-color: #ff5533;
+  backdrop-filter: blur(2px);
+}
+
+.custom-cursor-follower.cursor-drag {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 229, 255, 0.2);
+  border-color: #00e5ff;
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Magnetic Button Wrapper */
+.magnetic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  will-change: transform;
+}
+
+/* Number outline watermark */
+.number-outline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2);
+  color: transparent;
+  transition: -webkit-text-stroke 0.4s ease;
+}
+
+.group:hover .number-outline {
+  -webkit-text-stroke: 1.5px #ff5533;
+}
