@@ -5,39 +5,39 @@ import { ArrowUpRight } from "lucide-react";
 const PROJECTS = [
   {
     id: "01",
-    title: "Apex Velocity FPV",
+    title: "Neon Drift 8K",
     category: "fpv",
-    categoryLabel: "FPV Cinematography",
-    client: "Porsche Motorsport",
+    categoryLabel: "Aerial Dynamics",
+    client: "McLaren Automotive",
     year: "2026",
-    img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=500&fit=crop&auto=format",
+    img: "/images/work_drift.jpg",
   },
   {
     id: "02",
-    title: "Echoes of Silence",
+    title: "Whispers of the Wild",
     category: "cinema",
-    categoryLabel: "Brand Documentary",
-    client: "Arc'teryx International",
+    categoryLabel: "Nature Documentary",
+    client: "The North Face",
     year: "2026",
-    img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&auto=format",
+    img: "/images/work_nature.jpg",
   },
   {
     id: "03",
-    title: "Nova Horizon WebGL",
+    title: "Quantum Interface",
     category: "design",
-    categoryLabel: "3D Digital Experience",
-    client: "Nova Space Tech",
+    categoryLabel: "Web3 Experience",
+    client: "CyberTech Global",
     year: "2025",
-    img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=500&fit=crop&auto=format",
+    img: "/images/work_web3.jpg",
   },
   {
     id: "04",
-    title: "Urban Dynamics 6K",
+    title: "Vertical City",
     category: "fpv",
-    categoryLabel: "Indoor Drone Tour",
-    client: "Architecture Biennale",
+    categoryLabel: "Drone Architecture",
+    client: "Emaar Properties",
     year: "2025",
-    img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=500&fit=crop&auto=format",
+    img: "/images/work_architecture.jpg",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function WorkGallery() {
     : PROJECTS.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="work" className="py-28 px-6 md:px-12 bg-[#0a0b10] border-t border-white/5 relative">
+    <section id="work" className="py-28 px-6 md:px-12 bg-[#0a0b10] border-t border-white/5 relative scroll-mt-28">
       <div className="max-w-7xl mx-auto">
         {/* Header & Filter Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">

@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ onExplore, onOpenVideo }: HeroProps) {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between pt-32 pb-12 px-6 md:px-12 overflow-hidden">
+    <section id="home" className="relative min-h-screen w-full flex flex-col justify-between pt-32 pb-12 px-6 md:px-12 overflow-hidden scroll-mt-28">
       {/* Background Ambient Glows & Grid */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#ff5533]/20 via-[#00e5ff]/10 to-transparent rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
@@ -30,15 +30,15 @@ export default function Hero({ onExplore, onOpenVideo }: HeroProps) {
           className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold uppercase tracking-tighter leading-[0.9] text-[#f4f5f8] mb-8"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Visual<br />
+          Cinematic<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff5533] via-[#ff7a5c] to-[#00e5ff]">
-            Alchemy.
+            Excellence.
           </span>
         </h1>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-4">
           <p className="text-base sm:text-lg md:text-xl text-[#8b92a5] max-w-xl text-center md:text-left leading-relaxed">
-            We craft high-octane films, immersive FPV drone flights, and state-of-the-art interactive digital experiences that redefine brand identities.
+            We forge high-end visual narratives, aerial motion sequences, and immersive digital platforms that elevate modern brand identities.
           </p>
 
           {/* Magnetic Showreel Play Button */}
@@ -59,7 +59,7 @@ export default function Hero({ onExplore, onOpenVideo }: HeroProps) {
       <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-white/10 pt-6">
         <div className="flex items-center gap-2 text-xs font-mono text-[#8b92a5]">
           <Globe className="w-4 h-4 text-[#ff5533]" />
-          <span>Istanbul & Bordeaux, FR</span>
+          <span>London & Tokyo</span>
         </div>
 
         {/* Mouse Scroll Widget */}

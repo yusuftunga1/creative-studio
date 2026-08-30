@@ -9,6 +9,7 @@ interface MagneticButtonProps {
   href?: string;
   target?: string;
   rel?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 export default function MagneticButton({
@@ -19,6 +20,7 @@ export default function MagneticButton({
   href,
   target,
   rel,
+  type,
 }: MagneticButtonProps) {
   const btnRef = useRef<HTMLDivElement>(null);
 
@@ -69,9 +71,28 @@ export default function MagneticButton({
     );
   }
 
+  if (type) {
+    return (
+      <button type={type} onClick={onClick} className="inline-block border-none bg-transparent p-0 cursor-pointer">
+        {content}
+      </button>
+    );
+  }
+
   return (
-    <button onClick={onClick} className="inline-block border-none bg-transparent p-0">
+    <div
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (onClick && (e.key === "Enter" || e.key === " ")) {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      className={`inline-block border-none bg-transparent p-0 ${onClick ? "cursor-pointer" : ""}`}
+    >
       {content}
-    </button>
+    </div>
   );
 }

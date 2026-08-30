@@ -9,35 +9,35 @@ const SERVICES = [
   {
     num: "01",
     id: "cinema",
-    title: "Cinematic Film & Direction",
-    category: "Audiovisual Production",
-    desc: "From commercial storytelling to high-production music videos and brand documentaries. We deliver full-spectrum production with cinema cameras, color grading, and immersive sound design.",
-    tags: ["Commercials", "Documentary", "Color Grading", "Sound FX"],
+    title: "Motion & Cinematic Storytelling",
+    category: "Narrative & Commercial",
+    desc: "We bring high-end visions to life through global commercial campaigns and cinematic artistry. From pre-production to masterful color grading.",
+    tags: ["Global Campaigns", "Creative Direction", "Color Mastery", "Original Sound"],
     icon: Film,
     accent: "#ff5533",
-    img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=900&h=600&fit=crop&auto=format",
+    img: "/images/service_cinema.jpg",
   },
   {
     num: "02",
     id: "fpv",
-    title: "FPV & Ultra-Speed Drone Cinematography",
-    category: "Aerial & Immersive Flight",
-    desc: "Certified professional drone pilots capturing impossible angles, high-speed indoor chases, and sweeping landscape fly-throughs with custom 4K/6K FPV rigs and precision piloting.",
-    tags: ["Custom FPV Rigs", "Indoor Fly-through", "High-Speed Chase", "4K Raw"],
+    title: "Aerial & Dynamic Motion",
+    category: "Advanced Flight Ops",
+    desc: "Unlocking impossible perspectives with state-of-the-art heavy-lift drones and precision FPV maneuvers tailored for high-speed tracking.",
+    tags: ["Heavy-Lift Drones", "Precision FPV", "Vehicle Tracking", "8K Raw"],
     icon: Eye,
     accent: "#00e5ff",
-    img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=900&h=600&fit=crop&auto=format",
+    img: "/images/service_fpv.jpg",
   },
   {
     num: "03",
     id: "design",
-    title: "Digital Experience & 3D Interaction",
-    category: "Product & Motion Design",
-    desc: "Architecting award-winning web platforms, 3D WebGL interfaces, and brand design systems. We turn digital interactions into memorable, high-converting brand milestones.",
-    tags: ["3D WebGL", "UI/UX Architecture", "Design Systems", "Creative Dev"],
+    title: "Interactive Web & Virtual Spaces",
+    category: "Creative Technology",
+    desc: "Forging the future of digital presence through award-winning WebGL interfaces, robust design systems, and unparalleled user experiences.",
+    tags: ["Creative Dev", "UI/UX Architecture", "Spatial Computing", "Immersive Web"],
     icon: Box,
     accent: "#ccff00",
-    img: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&h=600&fit=crop&auto=format",
+    img: "/images/service_design.jpg",
   },
 ];
 
@@ -72,7 +72,8 @@ export default function Services({ onSelectService }: ServicesProps) {
           return (
             <div
               key={srv.id}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center group`}
+              id={srv.id}
+              className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center group scroll-mt-28`}
             >
               {/* Image Container */}
               <div

@@ -18,7 +18,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-28 px-6 md:px-12 bg-[#090a0f] border-t border-white/10 relative">
+    <section id="contact" className="py-28 px-6 md:px-12 bg-[#090a0f] border-t border-white/10 relative scroll-mt-28">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Info Column */}
@@ -47,7 +47,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-[10px] text-[#8b92a5] block uppercase">General Inquiries</span>
-                    <span>hello@lab.studio</span>
+                    <span>hello@kinetic.studio</span>
                   </div>
                 </div>
 
@@ -57,7 +57,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-[10px] text-[#8b92a5] block uppercase">Headquarters</span>
-                    <span>Istanbul, TR & Bordeaux, FR</span>
+                    <span>London, UK & Tokyo, JP</span>
                   </div>
                 </div>
 
@@ -67,7 +67,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-[10px] text-[#8b92a5] block uppercase">Studio Phone</span>
-                    <span>+90 (555) 000-LABS</span>
+                    <span>+44 20 7946 0958</span>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function ContactSection() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="e.g. Elena Rostova"
+                      placeholder="e.g. Arthur Pendelton"
                       className="w-full bg-[#0a0b10] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-[#4b5266] focus:outline-none focus:border-[#ff5533] transition-colors"
                     />
                   </div>
@@ -160,14 +160,11 @@ export default function ContactSection() {
                 </div>
 
                 <div className="pt-2">
-                  <MagneticButton strength={30}>
-                    <button
-                      type="submit"
-                      className="flex items-center gap-3 px-8 py-4 rounded-full bg-[#ff5533] hover:bg-[#ff6f52] text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-[#ff5533]/30"
-                    >
+                  <MagneticButton strength={30} type="submit">
+                    <div className="flex items-center gap-3 px-8 py-4 rounded-full bg-[#ff5533] hover:bg-[#ff6f52] text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-[#ff5533]/30">
                       <span>Submit Inquiry</span>
                       <Send className="w-4 h-4" />
-                    </button>
+                    </div>
                   </MagneticButton>
                 </div>
               </form>

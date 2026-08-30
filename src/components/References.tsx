@@ -6,13 +6,13 @@ interface ReferencesProps {
 }
 
 const BRANDS = [
-  "FERRARI", "PORSCHE", "RED BULL", "SONY CINE", "ARC'TERYX",
-  "LEICA", "DJI ENTERPRISE", "HYUNDAI N", "BALENCIAGA", "VOGUE"
+  "MCLAREN", "NORTH FACE", "HASSELBLAD", "CYBERTECH", "YVES SAINT LAURENT",
+  "SAMSUNG", "ROLEX", "EMAAR", "PRADA", "VIMEO"
 ];
 
 export default function References({ onContactClick }: ReferencesProps) {
   return (
-    <section className="py-24 px-6 md:px-12 bg-[#0c0d14] border-t border-white/5 relative overflow-hidden">
+    <section id="studio" className="py-24 px-6 md:px-12 bg-[#0c0d14] border-t border-white/5 relative overflow-hidden scroll-mt-28">
       <div className="max-w-7xl mx-auto text-center">
         <span className="text-xs font-mono text-[#8b92a5] uppercase tracking-widest block mb-4">
           // Trusted By Global Pioneers

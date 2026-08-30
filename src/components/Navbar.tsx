@@ -8,11 +8,12 @@ interface NavbarProps {
 }
 
 const NAV_ITEMS = [
-  { id: "home", label: "Overview" },
-  { id: "cinema", label: "Film & Video" },
-  { id: "fpv", label: "FPV & 3D Drone" },
-  { id: "design", label: "Digital Design" },
-  { id: "studio", label: "The Studio" },
+  { id: "home", label: "Welcome" },
+  { id: "cinema", label: "Cinematography" },
+  { id: "fpv", label: "Aerial Dynamics" },
+  { id: "design", label: "Digital Arts" },
+  { id: "work", label: "Portfolio" },
+  { id: "studio", label: "About Us" },
 ];
 
 export default function Navbar({ activeTab, onNavigate }: NavbarProps) {
@@ -32,7 +33,7 @@ export default function Navbar({ activeTab, onNavigate }: NavbarProps) {
             <div className="flex items-center gap-2 group cursor-pointer">
               <span className="w-3 h-3 rounded-full bg-[#ff5533] animate-pulse" />
               <span className="text-xl md:text-2xl font-extrabold tracking-tight uppercase" style={{ fontFamily: "var(--font-display)" }}>
-                LAB<span className="text-[#ff5533]">.</span>STUDIO
+                KINETIC<span className="text-[#ff5533]">.</span>
               </span>
             </div>
           </MagneticButton>
@@ -64,7 +65,7 @@ export default function Navbar({ activeTab, onNavigate }: NavbarProps) {
           <div className="hidden sm:block">
             <MagneticButton strength={30} onClick={() => handleNavClick("contact")}>
               <div className="flex items-center gap-2 bg-[#ff5533] hover:bg-[#ff6f52] text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-[#ff5533]/25 group">
-                <span>Start Project</span>
+                <span>Engage Us</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </MagneticButton>

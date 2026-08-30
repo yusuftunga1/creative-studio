@@ -12,10 +12,10 @@ export default function Footer({ onScrollToTop }: FooterProps) {
         <div className="flex items-center gap-3">
           <span className="w-2.5 h-2.5 rounded-full bg-[#ff5533]" />
           <span className="text-xl font-extrabold tracking-tight uppercase" style={{ fontFamily: "var(--font-display)" }}>
-            LAB<span className="text-[#ff5533]">.</span>STUDIO
+            KINETIC<span className="text-[#ff5533]">.</span>
           </span>
           <span className="text-xs font-mono text-[#8b92a5] ml-4">
-            © 2026 LAB STUDIO. All rights reserved.
+            © 2026 KINETIC STUDIOS. All rights reserved.
           </span>
         </div>
 

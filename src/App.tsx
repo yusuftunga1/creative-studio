@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Lenis from "lenis";
 import CustomCursor from "./components/CustomCursor";
-import PageTransition from "./components/PageTransition";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -13,8 +12,6 @@ import { X } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("home");
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [transitionTitle, setTransitionTitle] = useState("STUDIO");
   const [showVideoModal, setShowVideoModal] = useState(false);
   const lenisRef = useRef<Lenis | null>(null);
 
@@ -35,44 +32,49 @@ export default function App() {
     }
     requestAnimationFrame(raf);
 
+    // ScrollSpy to update activeTab in navbar as user scrolls
+    const sections = ["home", "cinema", "fpv", "design", "work", "studio", "contact"];
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (scrollPosition >= top) {
+            setActiveTab(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       lenis.destroy();
     };
   }, []);
 
   const handleNavigate = (tab: string) => {
-    if (tab === activeTab) return;
+    setActiveTab(tab);
 
-    const titles: Record<string, string> = {
-      home: "LAB STUDIO",
-      cinema: "FILM & DIRECTION",
-      fpv: "FPV & 3D DRONE",
-      design: "DIGITAL DESIGN",
-      studio: "THE STUDIO",
-      contact: "START PROJECT",
-    };
+    if (tab === "home") {
+      lenisRef.current?.scrollTo(0, { duration: 1.2 });
+      return;
+    }
 
-    setTransitionTitle(titles[tab] || "STUDIO");
-    setIsTransitioning(true);
-
-    setTimeout(() => {
-      setActiveTab(tab);
-      if (tab === "home") {
-        lenisRef.current?.scrollTo(0, { duration: 1.2 });
-      } else if (tab === "cinema" || tab === "fpv" || tab === "design") {
-        const servicesEl = document.getElementById("services");
-        if (servicesEl) lenisRef.current?.scrollTo(servicesEl, { duration: 1.2 });
-      } else if (tab === "contact") {
-        const contactEl = document.getElementById("contact");
-        if (contactEl) lenisRef.current?.scrollTo(contactEl, { duration: 1.2 });
-      }
-    }, 600);
+    const targetEl = document.getElementById(tab);
+    if (targetEl) {
+      lenisRef.current?.scrollTo(targetEl, { offset: -90, duration: 1.2 });
+    }
   };
 
   const handleExplore = () => {
     const servicesEl = document.getElementById("services");
     if (servicesEl) {
-      lenisRef.current?.scrollTo(servicesEl, { duration: 1.2 });
+      lenisRef.current?.scrollTo(servicesEl, { offset: -80, duration: 1.2 });
     }
   };
 
@@ -87,13 +89,6 @@ export default function App() {
 
       {/* Custom Lerp Cursor */}
       <CustomCursor />
-
-      {/* Le-Lab Style Curtain Wipe Transition */}
-      <PageTransition
-        isTransitioning={isTransitioning}
-        onTransitionComplete={() => setIsTransitioning(false)}
-        pageTitle={transitionTitle}
-      />
 
       {/* Fixed Navbar with Magnetic CTAs */}
       <Navbar activeTab={activeTab} onNavigate={handleNavigate} />
@@ -118,7 +113,7 @@ export default function App() {
         <div className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-300">
           <button
             onClick={() => setShowVideoModal(false)}
-            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#ff5533] transition-colors"
+            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#ff5533] transition-colors cursor-pointer"
             aria-label="Close Showreel"
           >
             <X className="w-6 h-6" />
