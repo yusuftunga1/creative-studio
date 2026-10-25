@@ -10,7 +10,7 @@ const PROJECTS = [
     categoryLabel: "Aerial Dynamics",
     client: "McLaren Automotive",
     year: "2026",
-    img: "/images/work_drift.jpg",
+    img: `${import.meta.env.BASE_URL}images/work_drift.jpg`,
   },
   {
     id: "02",
@@ -19,7 +19,7 @@ const PROJECTS = [
     categoryLabel: "Nature Documentary",
     client: "The North Face",
     year: "2026",
-    img: "/images/work_nature.jpg",
+    img: `${import.meta.env.BASE_URL}images/work_nature.jpg`,
   },
   {
     id: "03",
@@ -28,7 +28,7 @@ const PROJECTS = [
     categoryLabel: "Web3 Experience",
     client: "CyberTech Global",
     year: "2025",
-    img: "/images/work_web3.jpg",
+    img: `${import.meta.env.BASE_URL}images/work_web3.jpg`,
   },
   {
     id: "04",
@@ -37,7 +37,7 @@ const PROJECTS = [
     categoryLabel: "Drone Architecture",
     client: "Emaar Properties",
     year: "2025",
-    img: "/images/work_architecture.jpg",
+    img: `${import.meta.env.BASE_URL}images/work_architecture.jpg`,
   },
 ];
 

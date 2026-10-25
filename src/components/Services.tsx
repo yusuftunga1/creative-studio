@@ -15,7 +15,7 @@ const SERVICES = [
     tags: ["Global Campaigns", "Creative Direction", "Color Mastery", "Original Sound"],
     icon: Film,
     accent: "#ff5533",
-    img: "/images/service_cinema.jpg",
+    img: `${import.meta.env.BASE_URL}images/service_cinema.jpg`,
   },
   {
     num: "02",
@@ -26,7 +26,7 @@ const SERVICES = [
     tags: ["Heavy-Lift Drones", "Precision FPV", "Vehicle Tracking", "8K Raw"],
     icon: Eye,
     accent: "#00e5ff",
-    img: "/images/service_fpv.jpg",
+    img: `${import.meta.env.BASE_URL}images/service_fpv.jpg`,
   },
   {
     num: "03",
@@ -37,7 +37,7 @@ const SERVICES = [
     tags: ["Creative Dev", "UI/UX Architecture", "Spatial Computing", "Immersive Web"],
     icon: Box,
     accent: "#ccff00",
-    img: "/images/service_design.jpg",
+    img: `${import.meta.env.BASE_URL}images/service_design.jpg`,
   },
 ];
 
