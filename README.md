@@ -4,6 +4,7 @@
 
 An ultra-modern, high-performance **Cinematography & Creative Agency Portfolio** featuring buttery-smooth Lenis scroll dynamics, GSAP-powered magnetic UI interactions, dynamic ScrollSpy navigation, dark cyberpunk aesthetics, and a clean modular React 19 architecture.
 
+[![Live Website](https://img.shields.io/badge/Website-yusuftunga1.github.io/creative--studio-5CC8E8.svg?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yusuftunga1.github.io/creative-studio/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00ff88.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19.0-00d4ff.svg?style=for-the-badge&logo=react)](https://react.dev/)
 [![GSAP](https://img.shields.io/badge/GSAP-3.12.5-88CE02.svg?style=for-the-badge&logo=greensock)](https://gsap.com/)
@@ -12,7 +13,7 @@ An ultra-modern, high-performance **Cinematography & Creative Agency Portfolio**
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4.0-38B2AC.svg?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
-[🚀 Live Repository](https://github.com/yusuftunga1/creative-studio) · [✨ Features](#-features) · [🛠️ Tech Stack](#️-tech-stack) · [🚀 Quick Start](#-quick-start) · [📁 Project Structure](#-project-structure) · [📜 License](#-license)
+[🚀 Live Demo](https://yusuftunga1.github.io/creative-studio/) · [✨ Features](#-features) · [🛠️ Tech Stack](#️-tech-stack) · [🚀 Quick Start](#-quick-start) · [📁 Project Structure](#-project-structure) · [📜 License](#-license)
 
 </div>
 
